@@ -1,0 +1,94 @@
+{
+  "info": {
+    "name": "Transjakarta Fleet Management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Trigger Publisher",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/trigger",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "trigger"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Last Location",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/vehicles/:vehicle_id/location",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "vehicles",
+            ":vehicle_id",
+            "location"
+          ],
+          "variable": [
+            {
+              "key": "vehicle_id",
+              "value": "B1234ABC"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get History",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/vehicles/:vehicle_id/history?start=1792886400&end=1792972799",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "vehicles",
+            ":vehicle_id",
+            "history"
+          ],
+          "query": [
+            {
+              "key": "start",
+              "value": "1792886400"
+            },
+            {
+              "key": "end",
+              "value": "1792972799"
+            }
+          ],
+          "variable": [
+            {
+              "key": "vehicle_id",
+              "value": "B1234ABC"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}
